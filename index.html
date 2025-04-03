@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Prevent scrolling when menu is open */
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Change to desired background color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Transparent Navbar with margin on larger screens -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent lg:mt-10 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto p-4 flex items-center justify-between">
+            <!-- Logo/Title -->
+            <h1 class="text-white text-2xl font-bold">My Navbar</h1>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-7 text-white text-lg font-bold">
+                <li><a href="#" class="hover:text-red-500">Home</a></li>
+                <li><a href="#" class="hover:text-red-500">About Us</a></li>
+                <li><a href="#" class="hover:text-red-500">Show Schedule</a></li>
+                <li><a href="#" class="hover:text-red-500">Blog</a></li>
+                <li><a href="#" class="hover:text-red-500">Pages</a></li>
+                <li><a href="#" class="hover:text-red-500">Contact</a></li>
+            </ul>
+
+            <!-- Sponsor Button -->
+            <a href="#"
+                class="hidden md:inline-block bg-red-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600">
+                Sponsor
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center space-y-6 text-white text-xl z-40">
+            <button id="menu-close" class="absolute top-4 right-4 text-white hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <a href="#" class="hover:text-red-500">Home</a>
+            <a href="#" class="hover:text-red-500">About Us</a>
+            <a href="#" class="hover:text-red-500">Show Schedule</a>
+            <a href="#" class="hover:text-red-500">Blog</a>
+            <a href="#" class="hover:text-red-500">Pages</a>
+            <a href="#" class="hover:text-red-500">Contact</a>
+            <a href="#" class="bg-red-500 px-4 py-2 rounded-lg font-semibold hover:bg-red-600">Sponsor</a>
+        </div>
+    </header>
+
+    <!-- Full Image Section -->
+    <div class="relative min-h-screen w-full bg-cover bg-center"
+        style="background-image: url('image/1732081295988-133094723176702335849554459028253772331.png');">
+        <div
+            class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-center px-4">
+            <p class="text-3xl lg:text-7xl font-bold">Listen and Enjoy With FM.Land 92.0</p>
+        </div>
+    </div>
+
+    <!-- Section: Top Live Show -->
+    <section class="bg-gray-900 py-16">
+        <div class="text-center mb-10"><br><br>
+            <h2 class="text-red-500 font-bold text-4xl">Show</h2><br>
+            <h1 class="text-white text-5xl font-bold">Top Live Show</h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <!-- Card 1 -->
+            <div class="bg-gray-800 rounded-lg p-4 text-center">
+                <img src="image/coverstory_Memphis-Record-Pressing_46A3878.jpg" alt="Music of Pop"
+                    class="rounded-lg w-full h-60 object-cover mb-4">
+                <h3 class="text-white font-bold text-lg">Music of Pop</h3>
+                <p class="text-gray-400">RJ Janeski</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-gray-800 rounded-lg p-4 text-center">
+                <img src="image/R.jpg" alt="Music Podcast" class="rounded-lg w-full h-60 object-cover mb-4">
+                <h3 class="text-white font-bold text-lg">Music Podcast</h3>
+                <p class="text-gray-400">RJ Pavis</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-gray-800 rounded-lg p-4 text-center">
+                <img src="image/Sound-Effects-BMAT-scaled.webp" alt="Live Music"
+                    class="rounded-lg w-full h-60 object-cover mb-4">
+                <h3 class="text-white font-bold text-lg">Live Music</h3>
+                <p class="text-gray-400">RJ Josef</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-gray-800 rounded-lg p-4 text-center">
+                <img src="image/0_8Ll1T-eJI03q7CqG.jpg" alt="News Tech"
+                    class="rounded-lg w-full h-60 object-cover mb-4">
+                <h3 class="text-white font-bold text-lg">News Tech</h3>
+                <p class="text-gray-400">RJ Mario</p>
+            </div>
+        </div>
+    </section>
+
+    <!--  FM PLAY STARTS -->
+
+    <section
+        class="bg-gray-900 text-white py-4 px-6 flex flex-col md:flex-row items-center justify-between w-full fixed bottom-0 left-0 z-10">
+        <!-- Album Cover and Info -->
+        <div class="flex items-center gap-4 mb-4 md:mb-0">
+            <div class="w-16 h-16 rounded-full overflow-hidden">
+                <img id="album-cover" src="path-to-your-image-1.jpg" alt="Album Cover"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h3 id="song-name" class="text-lg font-semibold">"Life Is Love"</h3>
+                <p id="singer-name" class="text-sm text-gray-400">RJ Alex</p>
+            </div>
+        </div>
+
+        <!-- Controls, Time, and Progress Bar -->
+        <div class="flex flex-col md:flex-row items-center gap-4 flex-grow w-full">
+            <!-- Controls -->
+            <div class="flex gap-4 mb-2 md:mb-0">
+                <button id="prev-btn" class="text-2xl hover:text-red-500">&#x23EE;</button>
+                <button id="play-btn" class="text-2xl hover:text-red-500">&#9658;</button>
+                <button id="next-btn" class="text-2xl hover:text-red-500">&#x23ED;</button>
+            </div>
+
+            <!-- Time and Progress Bar -->
+            <div class="flex items-center gap-4 w-full justify-between">
+                <!-- Current Time -->
+                <div class="text-sm" id="current-time">0:00</div>
+
+                <!-- Progress Bar -->
+                <div class="flex-grow h-1 bg-gray-700 rounded-full relative">
+                    <div id="progress-bar" class="absolute top-0 left-0 h-1 bg-red-500" style="width: 0%;"></div>
+                </div>
+
+                <!-- Total Time -->
+                <div class="text-sm" id="total-time">0:00</div>
+            </div>
+        </div>
+
+        <!-- Audio Element (Hidden) -->
+        <audio id="audio-player" src="path-to-your-audio-file-1.mp3"></audio>
+    </section>
+
+    <!--  FM PLAY ENDS -->
+
+    <!-- Script for Mobile Menu -->
+    <script>
+        //    NAV BAR STARTS
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            body.classList.add('no-scroll');
+            menuToggle.classList.add('hidden');
+            menuClose.classList.remove('hidden');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            body.classList.remove('no-scroll');
+            menuToggle.classList.remove('hidden');
+            menuClose.classList.add('hidden');
+        });
+
+        // Hide navbar on scroll down and show on scroll up, also change background color on scroll
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling Down
+                navbar.classList.add('hidden');
+            } else {
+                // Scrolling Up
+                navbar.classList.remove('hidden');
+                if (currentScroll > 50) {
+                    navbar.classList.add('navbar-scrolled');  // Add background color when scrolling up
+                } else {
+                    navbar.classList.remove('navbar-scrolled');  // Remove background color when at the top
+                }
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        //   NAV BAR ENDS 
+
+        //  FM STARTS
+
+        // Array of songs with name, singer, and audio file path
+        const songs = [
+            {
+                name: "Love Me Like You Do",
+                singer: "Ellie Goulding",
+                file: "audio/Ellie Goulding - Love Me Like You Do (Official Video).mp3",
+                cover: "image/th.jpg"
+            },
+            {
+                name: "Despacito",
+                singer: "Luis Fonsi",
+                file: "audio/Luis Fonsi - Despacito ft. Daddy Yankee.mp3",
+                cover: "image/OIP.jpg"
+            },
+            // You can keep adding songs in the same format
+        ];
+
+        let currentSongIndex = 0;
+        const audioPlayer = document.getElementById('audio-player');
+        const playButton = document.getElementById('play-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeLabel = document.getElementById('current-time');
+        const totalTimeLabel = document.getElementById('total-time');
+        const songName = document.getElementById('song-name');
+        const singerName = document.getElementById('singer-name');
+        const albumCover = document.getElementById('album-cover');
+
+        let isPlaying = false;
+
+        // Function to load a song
+        function loadSong(songIndex) {
+            const song = songs[songIndex];
+            audioPlayer.src = song.file;
+            songName.textContent = song.name;
+            singerName.textContent = song.singer;
+            albumCover.src = song.cover;
+            audioPlayer.load();
+        }
+
+        // Load the first song initially
+        loadSong(currentSongIndex);
+
+        // Toggle play/pause
+        playButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playButton.innerHTML = '&#9658;'; // Play icon
+            } else {
+                audioPlayer.play();
+                playButton.innerHTML = '&#9208;'; // Pause icon
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Update progress bar and current time
+        audioPlayer.addEventListener('timeupdate', () => {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration;
+
+            // Update progress bar
+            const percentage = (currentTime / duration) * 100;
+            progressBar.style.width = `${percentage}%`;
+
+            // Update current time label (in minutes:seconds)
+            const currentMinutes = Math.floor(currentTime / 60);
+            const currentSeconds = Math.floor(currentTime % 60);
+            currentTimeLabel.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+
+            // Update total time label (in minutes:seconds)
+            const totalMinutes = Math.floor(duration / 60);
+            const totalSeconds = Math.floor(duration % 60);
+            totalTimeLabel.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' + totalSeconds : totalSeconds}`;
+        });
+
+        // Move to the next song
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length; // Loop back to first song if at the end
+            loadSong(currentSongIndex);
+            if (isPlaying) audioPlayer.play();
+        });
+
+        // Move to the previous song
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length; // Loop to last song if at the beginning
+            loadSong(currentSongIndex);
+            if (isPlaying) audioPlayer.play();
+        });
+
+        // Reset when audio ends
+        audioPlayer.addEventListener('ended', () => {
+            isPlaying = false;
+            playButton.innerHTML = '&#9658;'; // Play icon
+            progressBar.style.width = '0%';
+            currentTimeLabel.textContent = '0:00';
+        });
+
+
+    </script>
+</body>
+
+</html>
